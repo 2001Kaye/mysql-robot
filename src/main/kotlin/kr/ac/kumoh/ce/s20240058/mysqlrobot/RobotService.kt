@@ -7,5 +7,6 @@ import org.springframework.stereotype.Service
 class RobotService(val repository: RobotRepository) {
     // findall jpaRepo가 만들어줌
 //    fun getAllRobots(): List<Robot> { return repository.findAll() }
-fun getAllRobots(): List<Robot> = repository.findAll()
+    fun getAllRobots(): List<Robot> = repository.findAll()
+    fun getRobotWithWeapons(): List<EquipmentDto> = repository.findAllEquipment()
 }

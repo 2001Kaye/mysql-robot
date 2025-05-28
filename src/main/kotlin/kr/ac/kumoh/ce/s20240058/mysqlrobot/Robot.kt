@@ -16,3 +16,26 @@ data class Robot(
     var robotClass: String,
     // db에 스네이크 케이스, 여기엔 카멜 케이스로 써도 동일함
 )
+
+// 이름이 동일하면 따로 지정하지 않아도 됨
+@Entity
+data class Weapon(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Int,
+    val name: String,
+    val type: String,
+    val damage: Int,
+    val ability: String,
+)
+
+@Entity
+data class Equipment(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Int,
+    var mechanicId: Int,
+    var weaponId: Int,
+    val location: String,
+    val quantity: Int
+)
